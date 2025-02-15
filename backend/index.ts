@@ -108,7 +108,7 @@ peers.on("connection", async (socket) => {
 
   socket.on("createTransport", async ({ sender }, callback) => {
     if (sender) {
-      const addProducerTransport = await createWebRtcTransport(callback);
+      producerTransport = await createWebRtcTransport(callback);
     } else {
       consumerTransport = await createWebRtcTransport(callback);
     }
